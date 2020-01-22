@@ -1,0 +1,11 @@
+Source: hildon-base
+Section: misc
+Priority: optional
+Maintainer: Ivan J. <parazyd@dyne.org>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.3.0
+
+Package: hildon-base
+Architecture: all
+Conflicts: elogind
+Description: Hildon base settings and configuration
