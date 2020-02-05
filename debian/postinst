@@ -12,8 +12,6 @@ if ! id -u "$user" 2>/dev/null; then
 	done
 fi
 
-ln -svnf alpha /usr/share/themes/default
-
 mkdir -p /var/lib/dsme
 [ ! -f /var/lib/dsme/saved_state ] && echo "USER" > /var/lib/dsme/saved_state
 
