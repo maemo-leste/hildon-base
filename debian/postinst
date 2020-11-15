@@ -3,12 +3,27 @@
 user="user"
 groups="audio video sudo"
 
+xdg_dirs="
+	/home/$user/.config
+	/home/$user/MyDocs
+	/home/$user/MyDocs/.documents
+	/home/$user/MyDocs/.sounds
+	/home/$user/MyDocs/.images
+	/home/$user/MyDocs/.videos
+	/home/$user/MyDocs/DCIM
+"
+
 if ! id -u "$user" 2>/dev/null; then
 	echo "Adding user '$user'"
 	useradd -m -s /bin/bash "$user"
 
 	for group in $groups; do
 		gpasswd -a "$user" "$group"
+	done
+
+	for i in $xdg_dirs; do
+		mkdir -p "$i"
+		chown user:user "$i"
 	done
 fi
 
@@ -21,3 +36,5 @@ if [ ! -f /etc/sudoers.d/maemo ]; then
 	echo "$user    ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/maemo
 	chmod 0440 /etc/sudoers.d/maemo
 fi
+
+#DEBHELPER#
