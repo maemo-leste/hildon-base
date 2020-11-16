@@ -4,6 +4,7 @@ user="user"
 groups="audio video sudo"
 
 xdg_dirs="
+	/home/$user
 	/home/$user/.config
 	/home/$user/MyDocs
 	/home/$user/MyDocs/.documents
