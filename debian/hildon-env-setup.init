@@ -8,6 +8,7 @@ depend() {
 }
 
 start() {
+	ebegin "Setting up hildon env"
 	# Regenerate SSH keys (on first boot)
 	[ -f "/etc/ssh/ssh_host_rsa_key.pub" ] || ssh-keygen -A
 
@@ -15,9 +16,10 @@ start() {
 	mkdir -p "/run/user/$(id -u root)"
 	chown root:root "/run/user/$(id -u root)"
 	chmod 700 "/run/user/$(id -u root)"
-	mkdir -p "/run/user/$(ud -u user)"
+	mkdir -p "/run/user/$(id -u user)"
 	chown user:user "/run/user/$(id -u user)"
 	chmod 700 "/run/user/$(id -u user)"
+	eend $?
 }
 
 stop() {
