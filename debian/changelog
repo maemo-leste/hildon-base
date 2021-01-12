@@ -1,6 +1,7 @@
 hildon-base (1.3) unstable; urgency=medium
 
   * Add initscript to set up environment.
+  * Move expandcard.sh from image-builder to this package.
 
  -- Ivan J. <parazyd@dyne.org>  Tue, 12 Jan 2021 13:57:37 +0100
 
