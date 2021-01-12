@@ -14,8 +14,10 @@ start() {
 	# Create XDG_RUNTIME_DIR
 	mkdir -p "/run/user/$(id -u root)"
 	chown root:root "/run/user/$(id -u root)"
+	chmod 700 "/run/user/$(id -u root)"
 	mkdir -p "/run/user/$(ud -u user)"
 	chown user:user "/run/user/$(id -u user)"
+	chmod 700 "/run/user/$(id -u user)"
 }
 
 stop() {
