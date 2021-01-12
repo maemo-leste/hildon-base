@@ -26,6 +26,8 @@ if ! id -u "$user" 2>/dev/null; then
 		mkdir -p "$i"
 		chown user:user "$i"
 	done
+
+	echo "user:user" | chpasswd
 fi
 
 mkdir -p /var/lib/dsme
