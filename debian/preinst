@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$1" in
+install)
+	rm -f /etc/expandcard.sh
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0
