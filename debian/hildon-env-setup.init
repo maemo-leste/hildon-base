@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+description="Hildon environment"
+
+depend() {
+	need mountall
+	before xsession
+}
+
+start() {
+	# Regenerate SSH keys (on first boot)
+	[ -f "/etc/ssh/ssh_host_rsa_key.pub" ] || ssh-keygen -A
+
+	# Create XDG_RUNTIME_DIR
+	mkdir -p "/run/user/$(id -u root)"
+	chown root:root "/run/user/$(id -u root)"
+	mkdir -p "/run/user/$(ud -u user)"
+	chown user:user "/run/user/$(id -u user)"
+}
+
+stop() {
+	true
+}
