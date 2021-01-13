@@ -12,6 +12,10 @@ start() {
 	# Regenerate SSH keys (on first boot)
 	[ -f "/etc/ssh/ssh_host_rsa_key.pub" ] || ssh-keygen -A
 
+	if [ -x /usr/sbin/zramswap ]; then
+		/usr/sbin/zramswap start
+	fi
+
 	# Create XDG_RUNTIME_DIR
 	mkdir -p "/run/user/$(id -u root)"
 	chown root:root "/run/user/$(id -u root)"
@@ -23,5 +27,9 @@ start() {
 }
 
 stop() {
+	if [ -x /usr/sbin/zramswap ]; then
+		/usr/sbin/zramswap stop
+	fi
+
 	true
 }
