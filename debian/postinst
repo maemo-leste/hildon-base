@@ -40,9 +40,9 @@ if [ ! -f /etc/sudoers.d/maemo ]; then
 	chmod 0440 /etc/sudoers.d/maemo
 fi
 
-if rc-status default | grep -q hildon-env-setup; then
-	rc-update del hildon-env-setup default
-	rc-update add hildon-env-setup sysinit
-fi
-
 #DEBHELPER#
+
+rc-update del hildon-env-setup default || true
+rc-update add hildon-env-setup sysinit || true
+
+exit 0
