@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+description="Save pstore logs"
+
+depend() {
+	need mountall
+}
+
+start() {
+	ebegin "Copying pstore to /var/log (if any)"
+
+	if [ -n "$(ls -A /sys/fs/pstore)" ]; then
+		date="$(date '+%Y%m%d')"
+		mkdir -p "/var/log/pstore/${date}"
+		cp -r /sys/fs/pstore/* "/var/log/pstore/${date}"
+	fi
+
+	true
+}
+
+stop() {
+	true
+}
