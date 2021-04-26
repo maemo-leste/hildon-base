@@ -1,3 +1,10 @@
+hildon-base (1.5) unstable; urgency=medium
+
+  * Leave hildon-env-setup in default runlevel.
+  * Add /etc/maemo_version.
+
+ -- Ivan J. <parazyd@dyne.org>  Mon, 26 Apr 2021 16:02:15 +0200
+
 hildon-base (1.4) unstable; urgency=medium
 
   * Add initscript for saving pstore contents to /var/log if there is any.
