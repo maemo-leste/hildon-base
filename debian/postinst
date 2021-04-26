@@ -42,9 +42,6 @@ fi
 
 #DEBHELPER#
 
-rc-update del hildon-env-setup default || true
-rc-update add hildon-env-setup sysinit || true
-
 rc-update del pstore-save default || true
 rc-update add pstore-save sysinit || true
 

@@ -4,7 +4,7 @@ description="Hildon environment"
 
 depend() {
 	need mountall
-	before xsession
+	before dsme mce xorg
 }
 
 start() {
