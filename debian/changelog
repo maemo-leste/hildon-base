@@ -1,3 +1,9 @@
+hildon-base (1.6) unstable; urgency=medium
+
+  * Add user to netdev group
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Sat, 17 Jul 2021 15:10:52 +0200
+
 hildon-base (1.5) unstable; urgency=medium
 
   * Leave hildon-env-setup in default runlevel.
