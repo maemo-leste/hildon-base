@@ -1,7 +1,7 @@
 #!/bin/sh
 
 user="user"
-groups="audio video sudo"
+groups="audio video sudo netdev"
 
 xdg_dirs="
 	/home/$user
@@ -18,10 +18,6 @@ if ! id -u "$user" 2>/dev/null; then
 	echo "Adding user '$user'"
 	useradd -m -s /bin/bash "$user"
 
-	for group in $groups; do
-		gpasswd -a "$user" "$group"
-	done
-
 	for i in $xdg_dirs; do
 		mkdir -p "$i"
 		chown user:user "$i"
@@ -29,6 +25,10 @@ if ! id -u "$user" 2>/dev/null; then
 
 	echo "user:user" | chpasswd
 fi
+
+for group in $groups; do
+    gpasswd -a "$user" "$group"
+done
 
 mkdir -p /var/lib/dsme
 [ ! -f /var/lib/dsme/saved_state ] && echo "USER" > /var/lib/dsme/saved_state
