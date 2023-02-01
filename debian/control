@@ -7,4 +7,5 @@ Standards-Version: 4.3.0
 
 Package: hildon-base
 Architecture: all
+Conflicts: elogind
 Description: Hildon base settings and configuration
