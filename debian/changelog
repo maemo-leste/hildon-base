@@ -1,3 +1,9 @@
+hildon-base (1.8) unstable; urgency=medium
+
+  * Re-add elogind conflict, depend on consolekit
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Wed, 01 Feb 2023 20:20:50 +0100
+
 hildon-base (1.7) unstable; urgency=medium
 
   * Remove elogind conflict
