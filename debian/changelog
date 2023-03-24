@@ -1,3 +1,9 @@
+hildon-base (1.10) unstable; urgency=medium
+
+  * Conflict with xserver-xorg-legacy
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Fri, 24 Mar 2023 17:47:20 +0100
+
 hildon-base (1.9) unstable; urgency=medium
 
   * Depend on elogind, conflict with consolekit
