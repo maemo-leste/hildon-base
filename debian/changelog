@@ -1,3 +1,9 @@
+hildon-base (1.12) unstable; urgency=medium
+
+  * Revert change 1.11, did not seem to help
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Sun, 02 Apr 2023 13:55:18 +0200
+
 hildon-base (1.11) unstable; urgency=medium
 
   * Depend on xserver-xorg-legacy - without it we cannot close input devices
