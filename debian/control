@@ -7,6 +7,7 @@ Standards-Version: 4.3.0
 
 Package: hildon-base
 Architecture: all
-Conflicts: consolekit
-Depends: elogind, xserver-xorg-legacy
+Conflicts: consolekit,
+           xserver-xorg-legacy
+Depends: elogind
 Description: Hildon base settings and configuration
